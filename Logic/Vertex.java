@@ -1,8 +1,11 @@
 package Logic;
 
-public class Vertex {
+import Common.Common;
 
-    public Vertex() {
+public class Vertex extends FlowComponent {
+
+    public Vertex(Common.Color color, Common.Shade shade) {
+        super(color, shade);
 
     }
 

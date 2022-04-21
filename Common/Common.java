@@ -19,6 +19,19 @@ public class Common {
         Dark
     }
 
+    public enum CellState {
+        Empty,
+        Vertex,
+        Edge
+    }
+
+    public enum Direction {
+        North,
+        South,
+        East,
+        West
+    }
+
     public enum EdgeType {
         LeftRight,
         UpDown,
@@ -28,18 +41,13 @@ public class Common {
         NE
     }
 
-    public enum CellState {
-        Empty,
-        ContainsVertex,
-        ContainsEdge
-    }
-
     public enum CellDeadState {
+        NA,
         Alive,
         Dead
     }
 
-    public enum CellPerimeterState {
+    public enum CellPerimeterStatus {
         IsPerimeter,
         IsPerimeterBy1,
         IsCentral

@@ -2,25 +2,19 @@ package Logic;
 
 import Common.Common;
 
+import java.util.HashMap;
+
 public class FlowComponent {
 
     private final Common.Color color;
-    private final FlowComponent[] neighbors;
+    private final Common.Shade shade;
 
-    private boolean visited;
-
-    public FlowComponent(Common.Color color, FlowComponent[] neighbors) {
+    public FlowComponent(Common.Color color, Common.Shade shade) {
         this.color = color;
-        this.neighbors = neighbors;
-        visited = false;
+        this.shade = shade;
     }
 
     public Common.Color GetColor() { return color; }
-
-    public FlowComponent[] GetNeighbors() { return neighbors; }
-
-    public boolean IsVisited() { return visited; }
-
-    public void SetVisited(boolean newVisited) { visited = newVisited; }
+    public Common.Shade GetShade() { return shade; }
 
 }
