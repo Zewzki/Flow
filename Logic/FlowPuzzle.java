@@ -1,6 +1,7 @@
 package Logic;
 
 import Common.Common;
+import Generator.LoadPuzzleFromFile;
 
 import java.io.Serializable;
 
@@ -10,51 +11,63 @@ public class FlowPuzzle {
     private int boardWidth;
     private int boardHeight;
 
-    private Cell[][] board;
+    private Cell[][] playBoard;
+    private Cell[][] soutionBoard;
 
     // Constructors
+    // Create blank board
     public FlowPuzzle(int boardWidth, int boardHeight) {
         this.boardWidth = boardWidth;
         this.boardHeight = boardHeight;
-        board = new Cell[this.boardWidth][this.boardHeight];
+        soutionBoard = new Cell[this.boardWidth][this.boardHeight];
+        playBoard = new Cell[this.boardWidth][this.boardHeight];
 
+        // initialize all
         for (int i = 0; i < this.boardWidth; i++) {
             for (int j = 0; j < this.boardHeight; j++) {
-                board[i][j] = new Cell();
+                soutionBoard[i][j] = new Cell();
+                playBoard[i][j] = new Cell();
             }
         }
 
         for (int i = 0; i < this.boardWidth; i++) {
             for (int j = 0; j < this.boardHeight; j++) {
 
-                Cell c = board[i][j];
+                Cell playCell = playBoard[i][j];
 
                 if (i == 0) {
-                    c.SetPerimeterStatus(Common.CellPerimeterStatus.IsPerimeter);
+                    playCell.SetPerimeterStatus(Common.CellPerimeterStatus.IsPerimeter);
                 }
                 else if (i == this.boardWidth - 1) {
-                    c.SetPerimeterStatus(Common.CellPerimeterStatus.IsPerimeter);
+                    playCell.SetPerimeterStatus(Common.CellPerimeterStatus.IsPerimeter);
                 }
                 else {
-                    c.SetPerimeterStatus(Common.CellPerimeterStatus.IsCentral);
+                    playCell.SetPerimeterStatus(Common.CellPerimeterStatus.IsCentral);
                 }
 
                 if (j == 0) {
-                    c.SetPerimeterStatus(Common.CellPerimeterStatus.IsPerimeter);
+                    playCell.SetPerimeterStatus(Common.CellPerimeterStatus.IsPerimeter);
                 }
                 else if (j == this.boardHeight - 1) {
-                    c.SetPerimeterStatus(Common.CellPerimeterStatus.IsPerimeter);
+                    playCell.SetPerimeterStatus(Common.CellPerimeterStatus.IsPerimeter);
                 }
                 else {
-                    c.SetPerimeterStatus(Common.CellPerimeterStatus.IsCentral);
+                    playCell.SetPerimeterStatus(Common.CellPerimeterStatus.IsCentral);
                 }
 
             }
         }
+    }
+    // Load solution board from path
+    public FlowPuzzle(String puzzlePath) {
+    }
+
+    public void LoadPuzzleFromFile(String puzzlePath) {
 
     }
 
-    public FlowPuzzle(String puzzlePath) {
+    public void ClearPuzzleData() {
+
     }
 
     // Enums

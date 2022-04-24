@@ -22,6 +22,14 @@ public class LoadPuzzleFromFile implements PuzzleGenerator {
         randomGenerator = new Random();
     }
 
+    public LoadPuzzleFromFile(String puzzlePath) {
+        File f = new File(puzzlePath);
+        paths = f.list();
+        puzzleCount = paths.length;
+        previousIndex = -1;
+        randomGenerator = new Random();
+    }
+
     @Override
     public FlowPuzzle generatePuzzle() {
 

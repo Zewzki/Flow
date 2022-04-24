@@ -49,7 +49,6 @@ public class Common {
 
     public enum CellPerimeterStatus {
         IsPerimeter,
-        IsPerimeterBy1,
         IsCentral
     }
 

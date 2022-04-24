@@ -50,7 +50,7 @@ public class Cell {
     public Common.CellState GetCellState() { return cellState; }
 
     public Common.CellPerimeterStatus GetPerimeterStatus() { return perimeterStatus; }
-    public void SetPerimeterStatus(Common.Common.CellPerimeterStatus perimeterStatus) { this.perimeterStatus = perimeterStatus; }
+    public void SetPerimeterStatus(Common.CellPerimeterStatus perimeterStatus) { this.perimeterStatus = perimeterStatus; }
 
     public boolean IsVisited() { return isVisited; }
     public void SetVisited(boolean newVisited) { isVisited = newVisited; }
